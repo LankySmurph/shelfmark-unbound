@@ -12,7 +12,7 @@ permissions: read-all
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository_owner }}/shelfmark
+  IMAGE_NAME: ${{ github.repository_owner }}/shelfmark-unbound
 jobs:
   check-changes:
     runs-on: ubuntu-latest
