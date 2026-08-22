@@ -633,6 +633,14 @@ def _fetch_search_table(url: str, selector: network.AAMirrorSelector) -> tuple[s
 
 def search_books(query: str, filters: SearchFilters) -> list[BrowseRecord]:
     """Search for books matching the query.
+    # --- SHELFMARK-UNBOUND INJECTION ---
+    from shelfmark.core.config import config
+    if config.get("ENABLE_LIBGEN_DIRECT_SEARCH", False):
+        from shelfmark.release_sources.libgen_search import search_libgen
+        return search_libgen(query, filters)
+    # -----------------------------------
+
+    query_html = quote(query)
 
     Args:
         query: Search term (ISBN, title, author, etc.)
