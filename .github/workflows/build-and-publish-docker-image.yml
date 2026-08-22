@@ -12,7 +12,7 @@ permissions: read-all
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository_owner }}/shelfmark
+  IMAGE_NAME: lankysmurph/shelfmark-unbound
 jobs:
   check-changes:
     runs-on: ubuntu-latest
@@ -180,10 +180,10 @@ jobs:
 
           # Create legacy aliases pointing to current images
           # calibre-web-automated-book-downloader → standard image
-          create_alias "${STANDARD}" "${LEGACY}"
+          # create_alias "${STANDARD}" "${LEGACY}"
 
           # calibre-web-automated-book-downloader-tor → standard image
-          create_alias "${STANDARD}" "${LEGACY_TOR}"
+          # create_alias "${STANDARD}" "${LEGACY_TOR}"
 
           # calibre-web-automated-book-downloader-extbp → lite image
-          create_alias "${LITE}" "${LEGACY_EXTBP}"
+          # create_alias "${LITE}" "${LEGACY_EXTBP}"
