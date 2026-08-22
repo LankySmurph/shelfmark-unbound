@@ -1506,6 +1506,12 @@ def download_source_settings() -> list[SettingsField]:
             default=False,
         ),
         CheckboxField(
+            key="ENABLE_LIBGEN_DIRECT_SEARCH",
+            label="Use Native LibGen Search Engine",
+            description="Bypass Anna's Archive entirely and scrape LibGen directly for search results to avoid DDoS-Guard timeouts.",
+            default=False
+        ),
+        CheckboxField(
             key="DIRECT_DOWNLOAD_LANGUAGE_FROM_PATH",
             label="Detect Language From Distant Path",
             description=(
